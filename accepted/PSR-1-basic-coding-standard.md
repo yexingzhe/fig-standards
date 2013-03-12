@@ -3,7 +3,9 @@
 
 本文将标准化一些标准编码元素，以确保高级技术间之PHP程式码的互通性。
 
-在文件中所使用到的关键字“MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”,以及“ OPTIONAL”皆引用自[RFC 2199][]中说明。
+在文件中所使用到的关键字“MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
+“SHOULD NOT”, “RECOMMENDED”, “MAY”,
+以及“ OPTIONAL”皆引用自[RFC 2199][]中说明。
 
 [RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
@@ -16,7 +18,9 @@
 
 - PHP程序的文件编码，一定(MUST)要用“无BOM的UTF-8″格式。
 
-- 文件需要(SHOULD)定义 (classes, functions, constants,等)，或者遵从从属效应 (像是产生输出，变动.ini的设定等)，不要(SHOULD NOT )在两种同时使用。
+- 文件需要(SHOULD)定义 (classes, functions, constants,等)，
+- 或者遵从从属效应 (像是产生输出，变动.ini的设定等)，
+- 不要(SHOULD NOT )在两种同时使用。
 
 - 命名空间和类一定(MUST)  依循着 [PSR-0][]建议文件。
 
@@ -32,7 +36,8 @@
 
 ### 2.1. PHP 标签
 
-PHP代码一定要(MUST)  使用长标签 <?php ?>  或是短输出标签 <?= ?>  ；一定不能使用其它标签。
+PHP代码一定要(MUST)  使用长标签 <?php ?>  或是短输出标签 <?= ?>  ；
+一定不能使用其它标签。
 
 ### 2.2. 字符编码
 
@@ -40,11 +45,13 @@ PHP代码一定要(MUST) 只使用无BOM的UTF-8编码。
 
 ### 2.3. 从属效应
 
-一个文件中所需要(SHOULD)的，要么就是只定义新的symbols (类别、函式以及常数变数等)；要么就是只采用从属效应(side effects)，就是不能(SHOULD NOT)二者都在同一个文件中出现。
+一个文件中所需要(SHOULD)的，要么就是只定义新的symbols (类别、函式以及常数变数等)；
+要么就是只采用从属效应(side effects)，就是不能(SHOULD NOT)二者都在同一个文件中出现。
 
 “从属效应(Side effects)”一词系指在撰写程序逻辑时，完全只用到*包含进来的文件*中的类、函数或是常量等，而不再自行定义。
 
-“从属效应(Side effects)”包含(但还不仅止于此)：产生输出、明确地使用 require  或 include  、连接外部的服务、修改ini的设定、发出错误或例外、更动全局或静态变量、从文件读取或写入以及诸如此类的动作。
+“从属效应(Side effects)”包含(但还不仅止于此)：产生输出、明确地使用 require  或 include  、
+连接外部的服务、修改ini的设定、发出错误或例外、更动全局或静态变量、从文件读取或写入以及诸如此类的动作。
 
 下面这个范例是应该要去避免的情形，一个档案中包含着定义以及从属效应：
 
@@ -142,7 +149,8 @@ class Foo
 
 ### 4.2. 属性
 
-像这类的命名公约应该(SHOULD)是要用在一个合理的范围里，而这个范围应该是在：提供者层级(vendor-level)、封包层级(package-level)、类别层级(class-level )或method-level (函式层)。
+像这类的命名公约应该(SHOULD)是要用在一个合理的范围里，而这个范围应该是在：
+提供者层级(vendor-level)、封包层级(package-level)、类别层级(class-level )或method-level (函式层)。
 
 因此，本文件故意不对属性名称做像是 驼峰式命名($StudlyCaps、$camelCase)  或是 底线分隔($under_score)  这样的命名建议。
 
